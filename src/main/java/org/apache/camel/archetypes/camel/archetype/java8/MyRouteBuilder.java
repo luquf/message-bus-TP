@@ -1,7 +1,13 @@
 package org.apache.camel.archetypes.camel.archetype.java8;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 /**
  * A Camel Java8 DSL Router
@@ -14,31 +20,24 @@ public class MyRouteBuilder extends RouteBuilder {
     };
 
     private int index;
-
     /**
      * Let's configure the Camel routing rules using Java code...
+     * @throws TimeoutException 
+     * @throws IOException 
      */
-    public void configure() {
+    public void configure() throws IOException, TimeoutException {
 
-        // here is a sample which set a raondom body then performs content
-        // based routing on the message using method references
-        from("timer:simple?period=1000")
-            .process()
-                .message(m -> m.setHeader("index", index++ % 3))
-            .transform()
-                .message(this::randomBody)
-            .choice()
-                .when()
-                    .body(String.class::isInstance)
-                    .log("Got a String body")
-                .when()
-                    .body(Integer.class::isInstance)
-                    .log("Got an Integer body")
-                .when()
-                    .body(Double.class::isInstance)
-                    .log("Got a Double body")
-                .otherwise()
-                    .log("Other type message");
+    	ConnectionFactory connectionFactory = new ConnectionFactory();
+    	connectionFactory.setHost("localhost");
+        try (Connection connection = connectionFactory.newConnection();
+             Channel channel = connection.createChannel()) {
+            channel.queueDeclare("test", false, false, false, null);
+            String message = "Hello World!";
+            channel.basicPublish("", "test", null, message.getBytes("UTF-8"));
+            System.out.println(" [x] Sent '" + message + "'");
+        }
+
+    	// Note we can explicity name the component
     }
 
     private Object randomBody(Message m) {
