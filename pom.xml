@@ -41,7 +41,14 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
     </dependency>
-
+    <dependency> 
+	    <groupId>org.apache.camel</groupId>
+	    <artifactId>camel-sql</artifactId>
+	</dependency>
+	<dependency>
+    	<groupId>org.apache.camel</groupId>
+    	<artifactId>camel-rabbitmq</artifactId>
+	</dependency>
     <!-- logging -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
@@ -65,7 +72,19 @@
       <artifactId>camel-test</artifactId>
       <scope>test</scope>
     </dependency>
- 
+	
+	<!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core -->
+	<dependency>
+	    <groupId>org.twitter4j</groupId>
+	    <artifactId>twitter4j-core</artifactId>
+	    <version>4.0.7</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>org.json</groupId>
+    	<artifactId>json</artifactId>
+    	<version>20180130</version>
+	</dependency>
   </dependencies>
 
   <build>
