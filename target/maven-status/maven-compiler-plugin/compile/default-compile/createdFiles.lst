@@ -1,7 +1,7 @@
-rmq/FiletoMQ.class
 rmq/FileToMQRouteBuilder$2.class
-rmq/FileToMQRouteBuilder.class
 rmq/FileToMQRouteBuilder$1.class
 twittor/TwittorRouteBuilder$1.class
-twittor/TTrends.class
 twittor/TwittorRouteBuilder.class
+rmq/FiletoMQ.class
+rmq/FileToMQRouteBuilder.class
+twittor/TTrends.class

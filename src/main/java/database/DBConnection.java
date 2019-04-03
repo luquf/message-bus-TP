@@ -22,10 +22,10 @@ public class DBConnection {
             System.out.println("Connexion a " + DBPath + " avec succès");
         } catch (ClassNotFoundException notFoundException) {
             notFoundException.printStackTrace();
-            System.out.println("Erreur de connexion");
+            System.out.println("Erreur de connexion 1");
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            System.out.println("Erreur de connexion");
+            System.out.println("Erreur de connexion 2");
         }
     }
     
@@ -46,7 +46,6 @@ public class DBConnection {
                 + "	date text NOT NULL,\n"
                 + "	trend text NOT NULL\n"
                 + ");";
-        
         try {
         	Statement stmt = this.connection.createStatement();
             stmt.execute(sql);

@@ -40,7 +40,7 @@ public class TwittorRouteBuilder extends RouteBuilder{
 		            	db.insertTrend(date, trend);
 		 
 		            }
-		            db.close();
+		            
 		        }
 		    });;
 	}

@@ -20,7 +20,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
-			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -29,7 +28,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/luquf/Téléchargements/amqp-client-5.6.0.jar"/>
-	<classpathentry kind="lib" path="/home/luquf/Téléchargements/sqlite-jdbc-3.27.2.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
