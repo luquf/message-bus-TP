@@ -1,7 +1,9 @@
+org/apache/camel/archetypes/camel/archetype/java8/MyRouteBuilder.class
 rmq/FileToMQRouteBuilder$2.class
-rmq/FileToMQRouteBuilder$1.class
-twittor/TwittorRouteBuilder$1.class
-twittor/TwittorRouteBuilder.class
-rmq/FiletoMQ.class
 rmq/FileToMQRouteBuilder.class
+rmq/FileToMQRouteBuilder$1.class
+org/apache/camel/archetypes/camel/archetype/java8/MainApp.class
+twittor/TwittorRouteBuilder$1.class
+database/DBConnection.class
 twittor/TTrends.class
+twittor/TwittorRouteBuilder.class

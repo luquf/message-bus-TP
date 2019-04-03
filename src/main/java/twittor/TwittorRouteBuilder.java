@@ -21,7 +21,7 @@ public class TwittorRouteBuilder extends RouteBuilder{
 		/*
 		 * Each 10 mn pull twitter API to get the 10 trends on twitter worldwide;
 		 */
-		   from("timer://mytimer?period=10000") // set to 600000 
+		   from("timer://mytimer?period=600000") // set to 600000 
 		    .process(new Processor() {
 		        public void process(Exchange msg) throws TwitterException, SQLException {
 		            TTrends trends = new TTrends();
@@ -40,7 +40,7 @@ public class TwittorRouteBuilder extends RouteBuilder{
 		            	db.insertTrend(date, trend);
 		 
 		            }
-		            
+		            db.close();
 		        }
 		    });;
 	}

@@ -49,6 +49,7 @@ public class DBConnection {
         try {
         	Statement stmt = this.connection.createStatement();
             stmt.execute(sql);
+            stmt.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,6 +62,7 @@ public class DBConnection {
     		stmt.setString (1, date);
     		stmt.setString (2, trend);
     		stmt.execute();
+    		stmt.close();
     	} catch (Exception e) {
     		e.printStackTrace();
     	}
@@ -69,7 +71,6 @@ public class DBConnection {
     public void close() {
         try {
             connection.close();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
